@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Pengeluaran | UANGKU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFFFFF;
+            padding-top: 70px; /* Padding for fixed navbar */
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 0.5rem 1rem;
+            background-color: #FFFFFF;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #E4E4E4;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: #333333;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333333;
+        }
+
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .navbar img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Card Custom */
+        .card-custom {
+            background-color: #F2F2F2;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-custom h6 {
+            font-size: 1rem;
+            color: #5c5c5c;
+            margin-bottom: 5px;
+        }
+
+        .card-custom p {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Expense List */
+        .expense-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .expense-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #F2F2F2;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .expense-list li .icon {
+            background-color: #ffd166;
+            border-radius: 50%;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        /* Add Button */
+        .add-expense-btn {
+            background-color: #118ab2;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .add-expense-btn:hover {
+            background-color: #073b4c;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.png" alt="Logo UANGKU" class="me-2">
+                <span class="fw-bold">UANGKU</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="catatan.html">Catatan Pengeluaran</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jadwal_bayar.html">Pembayaran Terjadwal</a>
+                    </li>
+                </ul>
+                <img src="profile.png" alt="Profile Picture" class="rounded-circle ms-3 d-none d-lg-block">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container py-5">
+        <!-- Cards -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-4 col-sm-6">
+                <div class="card-custom">
+                    <h6>Jajan</h6>
+                    <p>Rp 53.000</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card-custom">
+                    <h6>Primer</h6>
+                    <p>Rp 340.000</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card-custom">
+                    <h6>Tabungan</h6>
+                    <p>Rp 260.000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expense List -->
+        <h5>Riwayat Pengeluaran</h5>
+        <ul class="expense-list">
+            <li>
+                <span><div class="icon"><i class="fas fa-shopping-cart"></i></div> Primer</span>
+                <span>-Rp 240.000</span>
+            </li>
+            <li>
+                <span><div class="icon"><i class="fas fa-pencil-alt"></i></div> Pendidikan</span>
+                <span>-Rp 200.000</span>
+            </li>
+            <li>
+                <span><div class="icon"><i class="fas fa-car"></i></div> Transportasi</span>
+                <span>-Rp 10.000</span>
+            </li>
+        </ul>
+
+        <!-- Add Button -->
+        <div class="text-center mt-4">
+            <button class="add-expense-btn" onclick="window.location.href='tambah.html'">
+                Tambah Catatan Pengeluaran
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

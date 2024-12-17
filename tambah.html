@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Catatan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .btn-custom {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.png" alt="UANGKU Logo" style="width: 40px; height: auto;">
+                <span class="ms-2 fw-bold">UANGKU</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="catatan.html">Catatan Pengeluaran</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jadwal_bayar.html">Pembayaran Terjadwal</a>
+                    </li>
+                </ul>
+            </div>
+            <img src="profile.png" alt="Profile Picture" class="rounded-circle ms-3" style="width: 40px; height: 40px;">
+        </div>
+    </nav>
+    <div class="form-container">
+        <h2>Tambah Catatan</h2>
+        <form onsubmit="event.preventDefault(); window.location.href='catatan.html';">
+            <input type="text" class="form-control" placeholder="Jenis Pengeluaran" required>
+            <div class="d-flex gap-2">
+                <input type="date" class="form-control" placeholder="Tanggal" required>
+                <input type="time" class="form-control" placeholder="Jam" required>
+            </div>
+            <input type="number" class="form-control" placeholder="Jumlah" required>
+            <button type="submit" class="btn-custom">Selesai</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
